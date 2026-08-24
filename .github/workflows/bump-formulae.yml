@@ -1,0 +1,43 @@
+name: Bump formulae
+
+# Polls upstream every six hours (UTC), and can also be triggered instantly by the
+# upstream release workflow via repository_dispatch.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [upstream-release]
+
+concurrency:
+  group: bump-formulae
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check upstream releases
+        id: bump
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/bump-formulae.py
+
+      - name: Check the formulae still parse
+        if: steps.bump.outputs.changed == 'true'
+        run: for f in Formula/*.rb; do ruby -c "$f"; done
+
+      - name: Commit
+        if: steps.bump.outputs.changed == 'true'
+        env:
+          SUMMARY: ${{ steps.bump.outputs.summary }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "$SUMMARY"
+          git push
