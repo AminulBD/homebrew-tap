@@ -16,23 +16,23 @@ class Ds < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/aminulbd/ds/releases/download/v0.1.6/ds-v0.1.6-aarch64-apple-darwin.tar.gz"
-      sha256 "bf96117c5013109eb3eb6ede738422efe5912086e42470c0cc70892dde6bf713"
+      url "https://github.com/aminulbd/ds/releases/download/v0.1.7/ds-v0.1.7-aarch64-apple-darwin.tar.gz"
+      sha256 "eb0a87dccddfd24fe1ceeacb332103b13e704889b076afe4f9c48879c4b85d85"
     end
     on_intel do
-      url "https://github.com/aminulbd/ds/releases/download/v0.1.6/ds-v0.1.6-x86_64-apple-darwin.tar.gz"
-      sha256 "09b57630997ac348470fdee5373e6c6d3b3978ef8b5a631081fe115fd7d869f5"
+      url "https://github.com/aminulbd/ds/releases/download/v0.1.7/ds-v0.1.7-x86_64-apple-darwin.tar.gz"
+      sha256 "84fb4523657ece6c9bdb21939c34a90475f97ba5df0245013391f844cf588982"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/aminulbd/ds/releases/download/v0.1.6/ds-v0.1.6-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "9320b3c6a263f510355c85cf87bf07edfe004c3c369e9e852207dae74ac4b6ec"
+      url "https://github.com/aminulbd/ds/releases/download/v0.1.7/ds-v0.1.7-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "11da7eb9bbb86fc2182b3e7b5fe9daeda78db9546420af64c4d375268d051a0a"
     end
     on_intel do
-      url "https://github.com/aminulbd/ds/releases/download/v0.1.6/ds-v0.1.6-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "b5bcb1ec4592d32bd0dfbcce549fa54cd79b0eb94cc00409ab509edc585c7b9e"
+      url "https://github.com/aminulbd/ds/releases/download/v0.1.7/ds-v0.1.7-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "0b0f061700a114e38df7c0c0f95c03718b5df6563c7b69ddd886005b9ba0f1f4"
     end
   end
 
