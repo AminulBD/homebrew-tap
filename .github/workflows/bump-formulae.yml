@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       formula:
-        description: "Only check this formula, e.g. ds (blank checks all)"
+        description: "Only check this formula or cask, e.g. ds (blank checks all)"
         required: false
         type: string
   repository_dispatch:
@@ -41,9 +41,9 @@ jobs:
             python3 scripts/bump-formulae.py
           fi
 
-      - name: Check the formulae still parse
+      - name: Check the formulae and casks still parse
         if: steps.bump.outputs.changed == 'true'
-        run: for f in Formula/*.rb; do ruby -c "$f"; done
+        run: for f in Formula/*.rb Casks/*.rb; do ruby -c "$f"; done
 
       - name: Commit
         if: steps.bump.outputs.changed == 'true'
