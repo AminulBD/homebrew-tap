@@ -1,9 +1,9 @@
 cask "avro" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "1.6.0"
-  sha256 arm:   "b6e4e3d0b605735be1a5f037e52b59bf72ca070115db6f0112931312f58ede2e",
-         intel: "80ac9ff705a7273f9d7980f6a33a93d27cf4fc149e8ffd180b719beae876ee25"
+  version "1.8.0"
+  sha256 arm:   "cb9f9fdda6516f9bc7b414b53f41fdc0f6f07784c2de598e3f6af9a84799609d",
+         intel: "e55cfd20c8442328af5957daf1076d4e8803c70ee97d0c0b2ffff9ccfed264f5"
 
   url "https://github.com/AminulBD/iAvro/releases/download/v#{version}/Avro-Keyboard-#{arch}.zip"
   name "Avro Keyboard"
